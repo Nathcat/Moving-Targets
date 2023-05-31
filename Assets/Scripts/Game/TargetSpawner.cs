@@ -7,6 +7,7 @@ public class TargetSpawner : MonoBehaviour
     public GameObject targetPrefab;
     public float spawnInterval;
     public float moveSpeed;
+    public Vector3 spawnScale;
     public float startDelay;
 
     public void StartSpawner() {
@@ -20,6 +21,7 @@ public class TargetSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
 
             GameObject obj = Instantiate(targetPrefab, transform.position, transform.rotation);
+            obj.transform.localScale = spawnScale;
             obj.GetComponent<MovingTarget>().moveSpeed = moveSpeed;
         }
     }

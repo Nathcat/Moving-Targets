@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Slider slider;
+    public Slider speedSlider;
+    public Slider scaleSlider;
     public TargetSpawner[] targetSpawners;
+    public GameObject startMenu;
     
     public void OnStartButtonClicked() {
         foreach (TargetSpawner spawner in targetSpawners) {
-            spawner.moveSpeed *= slider.value;
+            spawner.moveSpeed *= speedSlider.value;
+            spawner.spawnScale = new Vector3(scaleSlider.value, scaleSlider.value, scaleSlider.value);
             spawner.StartSpawner();
         }
 
-        gameObject.SetActive(false);
+        startMenu.SetActive(false);
+    }
+
+    public void OnStopButtonClicked() {
+        SceneManager.LoadScene("TargetScene");
     }
 }
