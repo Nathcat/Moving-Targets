@@ -1,0 +1,7 @@
+﻿  dllmain.cpp
+C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\dllmain.cpp(8,7): warning C4273: 'write_settings': inconsistent dll linkage
+C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\SettingsManager.h(14,29): message : see previous definition of 'write_settings'
+C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\dllmain.cpp(15,18): warning C4273: 'read_settings': inconsistent dll linkage
+C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\SettingsManager.h(15,40): message : see previous definition of 'read_settings'
+     Creating library C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\x64\Debug\SettingsManager.lib and object C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\x64\Debug\SettingsManager.exp
+  SettingsManager.vcxproj -> C:\Users\super\Documents\GitHub\Moving-Targets\SettingsManager\x64\Debug\SettingsManager.dll
