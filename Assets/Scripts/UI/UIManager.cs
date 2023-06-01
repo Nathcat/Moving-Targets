@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     public Slider scaleSlider;
     public TargetSpawner[] targetSpawners;
     public GameObject startMenu;
+
+    void Start() {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+    }
     
     public void OnStartButtonClicked() {
         foreach (TargetSpawner spawner in targetSpawners) {

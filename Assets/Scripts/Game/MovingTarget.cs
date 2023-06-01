@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovingTarget : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+    public Camera camera;
     private Rigidbody2D rb;
 
     void Start() {
