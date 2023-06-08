@@ -18,7 +18,7 @@ public class CanTouchController : MonoBehaviour
                 Touch touch = Input.GetTouch(0);
 
                 if (touch.phase == TouchPhase.Ended) {
-                    Vector3 touchPosition = transform.gameObject.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 7f));
+                    Vector3 touchPosition = transform.gameObject.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10f));
 
                     RaycastHit hit;
                     if (Physics.Raycast(transform.position, touchPosition - transform.position, out hit)) {
@@ -31,13 +31,12 @@ public class CanTouchController : MonoBehaviour
         }
         else {
             if (Input.GetMouseButtonUp(0)) {
-                Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 7f);
+                Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
                 mousePosition = transform.gameObject.GetComponent<Camera>().ScreenToWorldPoint(mousePosition);
 
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, mousePosition - transform.position, out hit)) {
                     if (hit.collider.transform.gameObject.CompareTag("Can")) {
-                        Debug.Log(hit.collider.gameObject);
                         hit.collider.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * throwForce, ForceMode.Impulse);
                     }
                 }

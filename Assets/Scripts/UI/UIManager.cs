@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
         startMenu.SetActive(false);
     }
 
-    public void OnStopButtonClicked() {
-        SceneManager.LoadScene("TargetScene");
+    public void OnStopButtonClicked(string sceneName) {
+        SceneManager.LoadScene(sceneName);
     }
 }
