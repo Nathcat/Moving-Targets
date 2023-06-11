@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class TouchController : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class TouchController : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(transform.position, touchPosition - transform.position, out hit)) {
                         if (hit.collider.transform.parent.gameObject.CompareTag("Target")) {
+                            hit.collider.transform.parent.gameObject.GetComponent<MovingTarget>().scoreText.text = "" + (Int32.Parse(hit.collider.transform.parent.gameObject.GetComponent<MovingTarget>().scoreText.text) + 1);
                             Destroy(hit.collider.transform.parent.gameObject);
                         }
                     }
@@ -31,6 +34,7 @@ public class TouchController : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, mousePosition - transform.position, out hit)) {
                     if (hit.collider.transform.parent.gameObject.CompareTag("Target")) {
+                        hit.collider.transform.parent.gameObject.GetComponent<MovingTarget>().scoreText.text = "" + (Int32.Parse(hit.collider.transform.parent.gameObject.GetComponent<MovingTarget>().scoreText.text) + 1);
                         Destroy(hit.collider.transform.parent.gameObject);
                     }
                 }
